@@ -1,0 +1,72 @@
+﻿<div ng-controller="app.views.test as vm">
+    <div class="Add-right" ng-init="add='#/RequestForm'" >
+        
+        <a   ng-href={{add}}  >Add New Request</a>
+       
+        <input type="button" class="btn btn-link btn-sm" value="Send For Approval" />
+    </div>
+    <br />
+    <br />
+    <div class="divList">
+
+       
+        <table class="table table-hover">
+            <tr>
+
+                <td><b>RequestId</b></td>
+                <td><b>StatusDescription</b></td>
+                <td><b>UserName</b></td>
+                <td><b>CreatedDate</b></td> 
+                <td><b>Edit Record</b></td>                  
+            </tr>
+            <tr ng-repeat="request in requests">
+
+                <td>
+                    {{request.RequestId}}
+                </td>
+                <td>
+                    {{request.StatusDescription}}
+                </td>
+                <td>
+                    {{request.UserName}}
+                </td>
+                <td>
+                    {{request.CreatedDate}}
+                </td>
+               <td>
+                   <a ng-href= {{"#/RequestForm/"+request.RequestId}}>Edit</a>
+
+               </td>
+            </tr>
+        </table>
+
+        @*<table class="table table-hover">
+            <tr>
+                <td><b>RequestId</b></td>
+                <td><b>RequesterName</b></td>
+                <td><b>Status</b></td>
+               
+            </tr>
+            <tr ng-repeat="emp in employee">
+                <td>
+                    {{emp.EmployeeId}}
+                </td>
+                <td>
+                    {{emp.Name}}
+                </td>
+                <td>
+                    {{emp.Designation}}
+                </td>
+                <td>
+                    {{emp.Dept}}
+                </td>
+
+                <td>
+                    <span ng-click="editEmployee(emp)" class="btn btn-primary">Edit</span>
+                    <span ng-click="DeleteEmployee(emp)" class="btn btn-danger">Delete</span>
+                </td>
+            </tr>
+        </table>*@
+    </div>
+</div>
+
